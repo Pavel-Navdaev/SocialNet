@@ -6,6 +6,7 @@
     grid-template-columns: 1fr 4fr 1fr 1fr;
     grid-template-rows: 80px;
     color: #ffffff;
+
 }
 .header img{
     height: 80px;
