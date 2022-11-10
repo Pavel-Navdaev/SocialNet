@@ -1,0 +1,60 @@
+.createPost {
+    background-color: #0f0f0f;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+
+}
+.createPost input {
+    background-color: #0f0f0f;
+    outline: none;
+    overflow: hidden;
+    -moz-appearance: none;
+    resize: none;
+    height: 1rem;
+    width: 100%;
+    border: none;
+    border-top: rgba(255, 255, 255, .2) 1px solid;
+    border-bottom: rgba(255, 255, 255, .2) 1px solid;
+    padding: 4rem 7rem;
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+.textBlock {
+    display: flex;
+    height: 100%;
+}
+.textBlock img {
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    align-self: center;
+    margin: 0 1rem;
+    position: absolute;
+}
+.label {
+    padding: 15px;
+    font-size: 1.5rem;
+    text-align: center;
+    color: #c7c7c7;
+}
+.createPost button {
+    background-color: rgba(0, 187, 255, 0.08);
+    border: none;
+    border-radius: 10px;
+    color: rgb(0, 187, 255);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    margin: 0 5px;
+    cursor: pointer;
+
+}
+.createPost button:hover{
+    background-color: rgba(0, 187, 255, 0.2);
+}
+.buttons {
+    display: flex;
+    padding: 10px;
+}

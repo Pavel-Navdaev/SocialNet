@@ -8,7 +8,11 @@ const ProfilePage = (props) => {
     <main>
       <ProfileHeader />
       <Navigation />
-      <MyPosts posts={props.posts} />
+      <MyPosts
+        state={props.state}
+        addPost={props.addPost}
+        updatePostText={props.updatePostText}
+      />
     </main>
   );
 };

@@ -4,13 +4,18 @@ import Post from "./Post/Post";
 import CreatePost from "./CreatePost/CreatePost";
 
 const MyPosts = (props) => {
-  const postsElements = props.posts.map((post) => (
+  //map posts data into components
+  let postsElements = props.state.posts.map((post) => (
     <Post postText={post.postText} />
   ));
 
   return (
     <div>
-      <CreatePost />
+      <CreatePost
+        newPostText={props.state.newPostText}
+        addPost={props.addPost}
+        updatePostText={props.updatePostText}
+      />
       <div className={c.posts}>{postsElements}</div>
     </div>
   );

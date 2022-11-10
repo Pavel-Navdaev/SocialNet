@@ -1,33 +1,25 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import state, { subscribe } from "./redux/state";
+import ReactDOM from "react-dom/client";
+import React from "react";
 import { BrowserRouter } from "react-router-dom";
-
-let dialogs = [
-  { path: "1", name: "Ed" },
-  { path: "2", name: "Eva" },
-  { path: "3", name: "Olly" },
-];
-let messages = [
-  { message: "Hi" },
-  { message: "How are u?" },
-  { message: "Fine" },
-];
-let posts = [
-  { postText: "Lorem Ipsum Lorem Ipsum" },
-  { postText: "Lorem Ipsum Lorem Ipsum" },
-  { postText: "Lorem Ipsum Lorem Ipsum" },
-];
+import App from "./App";
+import { addPost, updatePostText } from "./redux/state";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <App dialogs={dialogs} messages={messages} posts={posts} />
-    </BrowserRouter>
-  </React.StrictMode>
-);
+
+export let rerenderTree = (state) => {
+  root.render(
+    <React.StrictMode>
+      <BrowserRouter>
+        <App state={state} addPost={addPost} updatePostText={updatePostText} />
+      </BrowserRouter>
+    </React.StrictMode>
+  );
+};
+
+rerenderTree(state);
+subscribe(rerenderTree);
 
 reportWebVitals();
