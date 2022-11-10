@@ -23,21 +23,29 @@ const ProfileHeader = () => {
         <div className={c.socialIcons}>
           <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
             <img
-              src="https://w7.pngwing.com/pngs/967/42/png-transparent-facebook-logo-computer-icons-facebook-icon-blue-text-trademark.png"
+              src="https://www.freepnglogos.com/uploads/facebook-logo-13.png"
               alt="Facebook"
             />
           </a>
-          <a href="twitter.com" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://www.twitter.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img
               src="https://cdn-icons-png.flaticon.com/512/124/124021.png"
               alt="Twitter"
             />
           </a>
-          <a href="instagram.com" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://www.instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img src="https://pngicon.ru/file/uploads/instagram.png" alt="" />
           </a>
           <a
-            href="google.com/intl/ru/gmail/about"
+            href="https://www.google.com/intl/ru/gmail/about"
             target="_blank"
             rel="noopener"
           >
@@ -46,13 +54,21 @@ const ProfileHeader = () => {
               alt="Gmail"
             />
           </a>
-          <a href="youtube.com" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://www.youtube.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img
               src="https://img.freepik.com/premium-vector/youtube-background-youtube-icon-social-media-icons-realistic-logo-vector-zaporizhzhia-ukraine-may-10-2021_399089-1047.jpg"
               alt="Youtube"
             />
           </a>
-          <a href="linkedin.com" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://www.linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRySKuF_moRqZ1J0hvl10-MXaoNPDfLuS9F2kpBNnWbuhq1JZ9CJbG4q3x0omdo60wcyvM&usqp=CAU"
               alt="LinkedIn"

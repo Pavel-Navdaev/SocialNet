@@ -1,13 +1,14 @@
 import React from "react";
-import c from "./ProfilePage.module.css";
 import MyPosts from "./MyPosts/MyPosts";
 import ProfileHeader from "./ProfileHeader/ProfileHeader";
+import Navigation from "./Navigation/Navigation";
 
-const ProfilePage = () => {
+const ProfilePage = (props) => {
   return (
-    <main className={c.main}>
+    <main>
       <ProfileHeader />
-      <MyPosts />
+      <Navigation />
+      <MyPosts posts={props.posts} />
     </main>
   );
 };

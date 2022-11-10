@@ -1,5 +1,39 @@
 .nav{
-    grid-row: 2/3;
-    background-color: #0f0f0f;
+    grid-column: 1/2;
+    grid-row: 2/4;
     color: #ffffff;
+    background-color: #0f0f0f;
+    min-height: 100vh;
+
+
+}
+.nav nav {
+    position: sticky;
+    top: 5rem;
+    background-attachment: scroll;
+
+}
+nav a {
+    display: block;
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+nav a:visited, a:link{
+    color: inherit;
+}
+nav a.active{
+    background-color: rgba(0, 187, 255, 0.08);
+    border-radius: 10px;
+    margin: 0 1rem;
+    color: rgb(0, 187, 255);
+
+}
+nav a:first-child{
+    margin-top: 1rem;
+}
+nav a:hover {
+
+    color: rgb(0, 187, 255);
 }

@@ -1,0 +1,19 @@
+
+*{
+  box-sizing: border-box;
+}
+.appWrapper{
+  display: grid;
+  grid-template-columns: 1fr 6.5fr;
+  grid-template-rows: 80px 1fr;
+
+}
+
+.main{
+  grid-row: 2/3;
+  background-color:#1a1a1a;
+  color: #ffffff;
+  margin: 0 auto;
+  min-width: 55vw;
+  margin-top: 20px;
+}

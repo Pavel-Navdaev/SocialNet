@@ -1,15 +1,17 @@
 import React from "react";
 import c from "./MyPosts.module.css";
+import Post from "./Post/Post";
+import CreatePost from "./CreatePost/CreatePost";
 
-const MyPosts = () => {
+const MyPosts = (props) => {
+  const postsElements = props.posts.map((post) => (
+    <Post postText={post.postText} />
+  ));
+
   return (
     <div>
-      <div>My posts:</div>
-      <div>New post</div>
-      <div className={c.posts}>
-        <div className={c.post}>Post 1</div>
-        <div className={c.post}>Post 2</div>
-      </div>
+      <CreatePost />
+      <div className={c.posts}>{postsElements}</div>
     </div>
   );
 };
