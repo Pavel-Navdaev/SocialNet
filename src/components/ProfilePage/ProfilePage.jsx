@@ -1,18 +1,14 @@
 import React from "react";
-import MyPosts from "./MyPosts/MyPosts";
 import ProfileHeader from "./ProfileHeader/ProfileHeader";
 import Navigation from "./Navigation/Navigation";
+import MyPostsContainer from "./MyPosts/MyPostsContainer";
 
 const ProfilePage = (props) => {
   return (
     <main>
       <ProfileHeader />
       <Navigation />
-      <MyPosts
-        state={props.state}
-        addPost={props.addPost}
-        updatePostText={props.updatePostText}
-      />
+      <MyPostsContainer />
     </main>
   );
 };

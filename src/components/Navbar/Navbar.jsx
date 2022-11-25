@@ -19,11 +19,18 @@ const Navbar = () => {
           Dialogs
         </NavLink>
         <NavLink
+          to="/users"
+          className={(navData) => (navData.isActive ? `${c.active}` : "")}
+        >
+          Users
+        </NavLink>
+        <NavLink
           to="/groups"
           className={(navData) => (navData.isActive ? `${c.active}` : "")}
         >
           Groups
         </NavLink>
+
         <NavLink
           to="/friends"
           className={(navData) => (navData.isActive ? `${c.active}` : "")}

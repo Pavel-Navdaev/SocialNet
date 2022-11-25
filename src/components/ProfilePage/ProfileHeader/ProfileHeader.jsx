@@ -47,7 +47,7 @@ const ProfileHeader = () => {
           <a
             href="https://www.google.com/intl/ru/gmail/about"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
           >
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiee9EU0QqLtQAbeIsD4x0cjMrOhVv6tbXRMjwgt_wQVokbQkf5qcGRkzgZ6LnhA7IynU&usqp=CAU"

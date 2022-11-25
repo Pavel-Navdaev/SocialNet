@@ -2,12 +2,11 @@ import React from "react";
 import c from "./CreatePost.module.css";
 
 const CreatePost = (props) => {
-  let addPostButton = React.createRef();
   let addPost = () => {
     props.addPost();
   };
-  let updatePostText = () => {
-    let postText = addPostButton.current.value;
+  let updatePostText = (e) => {
+    let postText = e.target.value;
     props.updatePostText(postText);
   };
 
@@ -21,7 +20,6 @@ const CreatePost = (props) => {
         />
         <input
           type={"text"}
-          ref={addPostButton}
           placeholder="Write something here..."
           onChange={updatePostText}
           value={props.newPostText}

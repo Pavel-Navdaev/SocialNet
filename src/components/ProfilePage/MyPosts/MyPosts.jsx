@@ -1,21 +1,17 @@
 import React from "react";
 import c from "./MyPosts.module.css";
 import Post from "./Post/Post";
-import CreatePost from "./CreatePost/CreatePost";
+import CreatePostContainer from "./CreatePost/CreatePostContainer";
 
 const MyPosts = (props) => {
   //map posts data into components
-  let postsElements = props.state.posts.map((post) => (
+  let postsElements = props.profilePage.posts.map((post) => (
     <Post postText={post.postText} />
   ));
 
   return (
     <div>
-      <CreatePost
-        newPostText={props.state.newPostText}
-        addPost={props.addPost}
-        updatePostText={props.updatePostText}
-      />
+      <CreatePostContainer />
       <div className={c.posts}>{postsElements}</div>
     </div>
   );
