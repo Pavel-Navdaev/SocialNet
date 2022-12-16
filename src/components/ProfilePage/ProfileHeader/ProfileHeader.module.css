@@ -1,7 +1,5 @@
 .profileHeader {
     position: relative;
-    min-width: 100%;
-
 }
 .profileHeaderPhotos{
     margin-bottom: -5px ;
@@ -59,7 +57,7 @@
     width: 30%;
 }
 .socialIcons a {
-z-index: 1;
+    z-index: 1;
     cursor: pointer;
 }
 .profileShortInfoNumbers {
@@ -72,5 +70,4 @@ z-index: 1;
 }
 .profileShortInfoNumbers h5,p {
     margin: 0;
-
 }

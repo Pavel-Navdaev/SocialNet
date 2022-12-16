@@ -1,14 +1,14 @@
 import React from "react";
 import ProfileHeader from "./ProfileHeader/ProfileHeader";
 import Navigation from "./Navigation/Navigation";
-import MyPostsContainer from "./MyPosts/MyPostsContainer";
+import { Outlet } from "react-router-dom";
 
 const ProfilePage = (props) => {
   return (
     <main>
-      <ProfileHeader />
+      <ProfileHeader profile={props.profile} />
       <Navigation />
-      <MyPostsContainer />
+      <Outlet />
     </main>
   );
 };

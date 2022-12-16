@@ -6,7 +6,7 @@ import CreatePostContainer from "./CreatePost/CreatePostContainer";
 const MyPosts = (props) => {
   //map posts data into components
   let postsElements = props.profilePage.posts.map((post) => (
-    <Post postText={post.postText} />
+    <Post key={post.id} postText={post.postText} profile={props.profile} />
   ));
 
   return (

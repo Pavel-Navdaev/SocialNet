@@ -7,7 +7,7 @@
 }
 .nav nav {
     position: sticky;
-    top: 5rem;
+    top: 6rem;
     background-attachment: scroll;
 
 }
@@ -32,6 +32,5 @@ nav a:first-child{
     margin-top: 1rem;
 }
 nav a:hover {
-
     color: rgb(0, 187, 255);
 }

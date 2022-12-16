@@ -3,4 +3,49 @@
     background-color: #0f0f0f;
     border-radius: 12px;
 }
+.pagination{
+    position: relative;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
 
+.pagination:first-child{
+    border-bottom: rgba(255, 255, 255, .2) 1px solid;
+
+
+}
+.page{
+
+    background-color: rgba(0, 187, 255, 0.08);
+    width: 40px;
+    height: 40px;
+    padding: 11px 0;
+    text-align: center;
+    border-radius: 50%;
+    color: rgb(0, 187, 255);
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 0 15px;
+
+}
+
+.currentPage {
+    background-color: rgba(0, 187, 255, 0.4);
+    width: 40px;
+    height: 40px;
+    padding: 10px 0;
+    text-align: center;
+    border-radius: 50%;
+    color: rgb(0, 187, 255);
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin: 0 15px;
+}
+
+.preloader {
+    position: absolute;
+    right: 20px;
+}

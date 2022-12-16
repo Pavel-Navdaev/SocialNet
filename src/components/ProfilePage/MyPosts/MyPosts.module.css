@@ -1,5 +1,7 @@
 
 .posts {
     margin-top: 1rem;
+    border-radius: 12px;
+    max-width: 1056px;
     background-color: #0f0f0f;
 }

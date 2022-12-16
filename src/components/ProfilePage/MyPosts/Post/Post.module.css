@@ -1,6 +1,10 @@
 .postText {
     padding: 1rem;
+
 }
 .postLikes {
     padding-left: 1rem;
+}
+.post{
+    word-break: break-all;
 }

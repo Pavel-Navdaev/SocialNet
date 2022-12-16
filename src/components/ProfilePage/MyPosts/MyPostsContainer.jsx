@@ -4,11 +4,10 @@ import MyPosts from "./MyPosts";
 const mapStateToProps = (state) => {
   return {
     profilePage: state.profilePage,
+    profile: state.profilePage.userProfile,
   };
 };
-// const mapDispatchToProps = () => {
-//   return null;
-// };
-const MyPostsContainer = connect(mapStateToProps, null)(MyPosts);
+
+const MyPostsContainer = connect(mapStateToProps, {})(MyPosts);
 
 export default MyPostsContainer;

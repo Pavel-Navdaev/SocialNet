@@ -2,12 +2,16 @@ import React from "react";
 import c from "./Navbar.module.css";
 import { NavLink } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = (props) => {
+  let setMe = (e) => {
+    props.setProfile(props.userId);
+  };
   return (
     <div className={c.nav}>
       <nav>
         <NavLink
-          to="/profile"
+          onClick={setMe}
+          to="/profile/timeline"
           className={(navData) => (navData.isActive ? `${c.active}` : "")}
         >
           Profile
@@ -30,7 +34,6 @@ const Navbar = () => {
         >
           Groups
         </NavLink>
-
         <NavLink
           to="/friends"
           className={(navData) => (navData.isActive ? `${c.active}` : "")}

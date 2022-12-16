@@ -11,10 +11,10 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 export let rerenderTree = () => {
   root.render(
-    // <React.StrictMode>
+    //<React.StrictMode>
     <BrowserRouter>
       <Provider store={store}>
-        <App dispatch={store.dispatch.bind(store)} store={store} />
+        <App />
       </Provider>
     </BrowserRouter>
     // </React.StrictMode>
@@ -23,9 +23,9 @@ export let rerenderTree = () => {
 
 rerenderTree(store.getState());
 
-store.subscribe(() => {
-  let state = store.getState();
-  rerenderTree(state);
-});
+// store.subscribe(() => {
+//   let state = store.getState();
+//   rerenderTree(state);
+// });
 
 reportWebVitals();

@@ -1,7 +1,12 @@
 import React from "react";
 import c from "./ProfileHeader.module.css";
+import Preloader from "../../common/Preloader/Preloader";
+import userDefaultPhoto from "../../../icons/userDefault.png";
 
-const ProfileHeader = () => {
+const ProfileHeader = (props) => {
+  if (!props.profile) {
+    return <Preloader />;
+  }
   return (
     <div className={c.profileHeader}>
       <div className={c.profileHeaderPhotos}>
@@ -13,22 +18,30 @@ const ProfileHeader = () => {
       </div>
       <div className={c.alignPhoto}>
         <img
-          src="https://globalhrsummit.com/wp-content/uploads/2018/11/Nick-Vujicic.jpg"
+          src={
+            props.profile.photos.large !== null
+              ? props.profile.photos.large
+              : userDefaultPhoto
+          }
           alt=""
           className={c.profilePhoto}
         />
-        <div className={c.profileName}>Nick Vujicic</div>
+        <div className={c.profileName}>{props.profile.fullName}</div>
       </div>
       <div className={c.profileShortInfo}>
         <div className={c.socialIcons}>
-          <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
+          <a
+            href={"https://www." + props.profile.contacts.facebook}
+            target="_blank"
+            rel="noreferrer"
+          >
             <img
               src="https://www.freepnglogos.com/uploads/facebook-logo-13.png"
               alt="Facebook"
             />
           </a>
           <a
-            href="https://www.twitter.com"
+            href={props.profile.contacts.twitter}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -38,7 +51,7 @@ const ProfileHeader = () => {
             />
           </a>
           <a
-            href="https://www.instagram.com"
+            href={"https://" + props.profile.contacts.instagram}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -55,7 +68,7 @@ const ProfileHeader = () => {
             />
           </a>
           <a
-            href="https://www.youtube.com"
+            href={props.profile.contacts.youtube}
             target="_blank"
             rel="noopener noreferrer"
           >

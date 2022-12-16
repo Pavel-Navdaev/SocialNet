@@ -1,21 +1,34 @@
 import React from "react";
 import c from "./Navigation.module.css";
+import { NavLink } from "react-router-dom";
 
 const Navigation = () => {
   return (
     <div className={c.profileNavigation}>
-      <div>
+      <NavLink
+        to={"timeline"}
+        className={(navData) => (navData.isActive ? `${c.active}` : "")}
+      >
         <p>Timeline</p>
-      </div>
-      <div>
+      </NavLink>
+      <NavLink
+        to={"about"}
+        className={(navData) => (navData.isActive ? `${c.active}` : "")}
+      >
         <p>About</p>
-      </div>
-      <div>
+      </NavLink>
+      <NavLink
+        to={"friends"}
+        className={(navData) => (navData.isActive ? `${c.active}` : "")}
+      >
         <p>Friends</p>
-      </div>
-      <div>
+      </NavLink>
+      <NavLink
+        to={"photos"}
+        className={(navData) => (navData.isActive ? `${c.active}` : "")}
+      >
         <p>Photos</p>
-      </div>
+      </NavLink>
     </div>
   );
 };

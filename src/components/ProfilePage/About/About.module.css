@@ -1,0 +1,45 @@
+.aboutWrapper {
+    background-color: #0f0f0f;
+    border-radius: 12px;
+}
+.title{
+    padding: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: rgba(255, 255, 255, .2) 1px solid;
+    font-size: 1.5rem;
+}
+.mainInfo {
+    font-size: 1.7rem;
+    padding: 1rem 3rem;
+    border-bottom: rgba(255, 255, 255, .2) 1px solid;
+    margin-bottom: 1rem;
+
+
+}
+.mainInfo div {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.mainInfoTitle{
+    width: 170px;
+    margin-right: 5rem
+}
+
+
+.mainInfo p{
+    margin-bottom: 1rem;
+    text-align: center;
+}
+.mainInfo .description {
+    line-height: 1.7rem;
+    font-size: 1.1rem;
+    text-align: center;
+
+
+}
+.contactsInfo{
+    padding: 1rem 3rem;
+    font-size: 1.7rem;
+}
