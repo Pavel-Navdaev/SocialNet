@@ -3,8 +3,9 @@ import c from "./Navbar.module.css";
 import { NavLink } from "react-router-dom";
 
 const Navbar = (props) => {
-  let setMe = (e) => {
+  let setMe = () => {
     props.setProfile(props.userId);
+    props.setStatus(props.userId);
   };
   return (
     <div className={c.nav}>

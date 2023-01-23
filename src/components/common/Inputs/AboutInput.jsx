@@ -7,7 +7,14 @@ const AboutInput = (props) => {
     props.activateEditMode(name);
   };
   if (props.editMode) {
-    return <Input autoFocus={true} type={"text"} name={props.name} />;
+    return (
+      <Input
+        value={props.status}
+        autoFocus={true}
+        type={"text"}
+        name={props.name}
+      />
+    );
   } else if (props.description) {
     return <div onDoubleClick={activateEditMode}>{props.description}</div>;
   } else {

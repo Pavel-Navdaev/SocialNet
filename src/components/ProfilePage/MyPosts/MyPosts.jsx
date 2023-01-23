@@ -3,7 +3,7 @@ import c from "./MyPosts.module.css";
 import Post from "./Post/Post";
 import CreatePostContainer from "./CreatePost/CreatePostContainer";
 
-const MyPosts = (props) => {
+const MyPosts = React.memo((props) => {
   //map posts data into components
   let postsElements = props.profilePage.posts.map((post) => (
     <Post key={post.id} postText={post.postText} profile={props.profile} />
@@ -15,6 +15,6 @@ const MyPosts = (props) => {
       <div className={c.posts}>{postsElements}</div>
     </div>
   );
-};
+});
 
 export default MyPosts;

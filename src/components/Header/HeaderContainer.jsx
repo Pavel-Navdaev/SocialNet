@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./Header";
 import { connect } from "react-redux";
 import { logoutInNetwork } from "../../redux/authReducer";
-import { setProfile } from "../../redux/profileReducer";
+import { setProfile, setStatus } from "../../redux/profileReducer";
 
 class HeaderContainer extends React.Component {
   render() {
@@ -20,4 +20,5 @@ let mapStateToProps = (state) => {
 export default connect(mapStateToProps, {
   logoutInNetwork,
   setProfile,
+  setStatus,
 })(HeaderContainer);

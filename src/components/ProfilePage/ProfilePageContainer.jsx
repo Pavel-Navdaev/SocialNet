@@ -11,8 +11,8 @@ import withRouter from "../common/hoc/withRouter";
 class ProfilePageContainer extends React.Component {
   componentDidMount() {
     let userId = this.props.router.params.userId;
-    if (!userId || userId === "/timeline") {
-      userId = this.props.myId;
+    if (!userId) {
+      // userId = this.props.myId;
       return <Preloader />;
     }
     this.props.setProfile(userId);

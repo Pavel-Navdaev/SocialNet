@@ -1,12 +1,11 @@
-import React from "react";
+import React,  from "react";
 import c from "./About.module.css";
 import { Form, Formik } from "formik";
-import AboutInput from "../../common/Inputs/AboutInput";
+import AboutInputWithHooks from "../../common/Inputs/AboutInputWithHooks";
 
 const About = (props) => {
-  const onSubmit = (values, actions) => {
-    console.log(actions);
-    props.deactivateEditMode(values.status);
+  const onSubmit = (values) => {
+    props.updateStatus(values.status);
   };
 
   return (
@@ -22,12 +21,12 @@ const About = (props) => {
           <div className={c.description}>
             <div>
               <Formik
-                initialValues={{ status: props.value }}
+                initialValues={{ status: props.status }}
                 onSubmit={onSubmit}
               >
                 {(formik) => (
                   <Form onBlur={formik.handleSubmit}>
-                    <AboutInput
+                    <AboutInputWithHooks
                       name={"status"}
                       description={props.status}
                       editMode={props.editMode}

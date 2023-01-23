@@ -1,6 +1,7 @@
 import { setUser } from "./authReducer";
+import { setProfile, setStatus } from "./profileReducer";
 
-const INITIALIZIED_SUCCESS = "INITIALIZIED-SUCCESS";
+const INITIALIZED_SUCCESS = "INITIALIZED-SUCCESS";
 
 const preloadedState = {
   initializedStatus: false,
@@ -8,7 +9,7 @@ const preloadedState = {
 
 const appReducer = (state = preloadedState, action) => {
   switch (action.type) {
-    case INITIALIZIED_SUCCESS:
+    case INITIALIZED_SUCCESS:
       return {
         ...state,
         initializedStatus: true,
@@ -22,17 +23,21 @@ const appReducer = (state = preloadedState, action) => {
 //action creators
 
 export const initializeSuccess = () => ({
-  type: INITIALIZIED_SUCCESS,
+  type: INITIALIZED_SUCCESS,
 });
 
 //thunk creators
 
 export const initializeApp = () => {
-  return (dispatch) => {
-    let initPromisesArray = [dispatch(setUser())];
-    Promise.all(initPromisesArray).then(() => {
-      dispatch(initializeSuccess());
-    });
+  return async (dispatch) => {
+    let initPromisesArray = [
+      dispatch(setUser()).then((id) => {
+        dispatch(setProfile(id));
+        dispatch(setStatus(id));
+      }),
+    ];
+    await Promise.all(initPromisesArray);
+    dispatch(initializeSuccess());
   };
 };
 

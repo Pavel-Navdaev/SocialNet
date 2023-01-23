@@ -32,32 +32,33 @@ export const setUserSuccess = (id, email, login, isAuth) => ({
 //thunk creators
 
 export const setUser = () => {
-  return (dispatch) => {
-    return API.AuthAPI.getMe().then((response) => {
-      if (response.data.resultCode === 0) {
-        let { id, email, login } = response.data.data;
-        dispatch(setUserSuccess(id, email, login, true));
-        return id;
-      }
-    });
+  return async (dispatch) => {
+    let response = await API.AuthAPI.getMe();
+
+    if (response.data.resultCode === 0) {
+      let { id, email, login } = response.data.data;
+      dispatch(setUserSuccess(id, email, login, true));
+      return id;
+    }
   };
 };
 
-export const loginInNetwork = (email, password, rememberMe) => (dispatch) => {
-  return API.AuthAPI.loginMe(email, password, rememberMe).then((response) => {
+export const loginInNetwork =
+  (email, password, rememberMe) => async (dispatch) => {
+    let response = await API.AuthAPI.loginMe(email, password, rememberMe);
+
     if (response.data.resultCode === 0) {
       dispatch(setUser());
       return response.data;
     }
     return response.data;
-  });
-};
-export const logoutInNetwork = () => (dispatch) => {
-  API.AuthAPI.logoutMe().then((response) => {
-    if (response.data.resultCode === 0) {
-      dispatch(setUserSuccess(null, null, null, false));
-    }
-  });
+  };
+
+export const logoutInNetwork = () => async (dispatch) => {
+  let response = await API.AuthAPI.logoutMe();
+  if (response.data.resultCode === 0) {
+    dispatch(setUserSuccess(null, null, null, false));
+  }
 };
 
 export default authReducer;
