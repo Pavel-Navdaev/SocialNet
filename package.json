@@ -2,6 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://pavel-navdaev.github.io/SocialNet/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.0",
     "@testing-library/jest-dom": "^5.14.1",
@@ -25,7 +26,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -49,6 +52,7 @@
     "@babel/core": "^7.20.7",
     "@babel/preset-env": "^7.20.2",
     "babel-jest": "^29.3.1",
+    "gh-pages": "^5.0.0",
     "prettier": "^2.7.1"
   },
   "jest": {

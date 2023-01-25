@@ -1,4 +1,4 @@
-import React,  from "react";
+import React from "react";
 import c from "./About.module.css";
 import { Form, Formik } from "formik";
 import AboutInputWithHooks from "../../common/Inputs/AboutInputWithHooks";
