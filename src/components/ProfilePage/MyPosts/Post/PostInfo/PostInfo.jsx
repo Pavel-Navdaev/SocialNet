@@ -1,6 +1,6 @@
 import React from "react";
 import c from "./PostInfo.module.css";
-import userDefaultPhoto from "../../../../../icons/userDefault.png";
+import defaultAvatar from "../../../../../icons/defaultAvatar.png";
 import Preloader from "../../../../common/Preloader/Preloader";
 
 const PostInfo = (props) => {
@@ -15,7 +15,7 @@ const PostInfo = (props) => {
             src={
               props.profile.photos.large !== null
                 ? props.profile.photos.large
-                : userDefaultPhoto
+                : defaultAvatar
             }
             alt=""
           />

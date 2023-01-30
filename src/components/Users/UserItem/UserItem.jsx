@@ -1,6 +1,6 @@
 import React from "react";
 import c from "./UserItem.module.css";
-import userDefaultPhoto from "../../../icons/userDefault.png";
+import defaultAvatar from "../../../icons/defaultAvatar.png";
 import { NavLink } from "react-router-dom";
 
 const UserItem = (props) => {
@@ -15,7 +15,7 @@ const UserItem = (props) => {
       <div className={c.profilePhoto}>
         <NavLink to={"/profile/timeline/" + props.id}>
           <img
-            src={props.imgURL != null ? props.imgURL : userDefaultPhoto}
+            src={props.imgURL != null ? props.imgURL : defaultAvatar}
             alt=""
           />
         </NavLink>

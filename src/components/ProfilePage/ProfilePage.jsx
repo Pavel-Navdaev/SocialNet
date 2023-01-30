@@ -6,9 +6,13 @@ import { Outlet } from "react-router-dom";
 const ProfilePage = (props) => {
   return (
     <main>
-      <ProfileHeader profile={props.profile} />
+      <ProfileHeader
+        savePhoto={props.savePhoto}
+        profile={props.profile}
+        isOwner={props.isOwner}
+      />
       <Navigation />
-      <Outlet />
+      <Outlet context={props.isOwner} />
     </main>
   );
 };

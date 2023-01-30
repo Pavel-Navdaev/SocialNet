@@ -2,7 +2,7 @@ import React from "react";
 import logo from "../../icons/logo.png";
 import c from "./Header.module.css";
 import { NavLink } from "react-router-dom";
-import userDefault from "../../icons/userDefault.png";
+import defaultAvatar from "../../icons/defaultAvatar.png";
 
 const Header = (props) => {
   let setMe = () => {
@@ -24,7 +24,7 @@ const Header = (props) => {
           {props.isAuth ? (
             <div>
               <NavLink onClick={setMe} to={"/profile/timeline"}>
-                <img src={props.imgSrc ? props.imgSrc : userDefault} alt="" />
+                <img src={props.imgSrc ? props.imgSrc : defaultAvatar} alt="" />
                 {props.name}
               </NavLink>
               <button onClick={props.logoutInNetwork}>Sign Out</button>

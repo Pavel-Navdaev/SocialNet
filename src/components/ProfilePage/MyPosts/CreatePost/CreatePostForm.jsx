@@ -20,6 +20,7 @@ const CreatePostForm = (props) => {
         <div className={c.createPost}>
           <div className={c.label}>Create Post</div>
           <CreatePostInput
+            autoComplete={"off"}
             type={"text"}
             name={"newPostText"}
             placeholder="Write something here..."

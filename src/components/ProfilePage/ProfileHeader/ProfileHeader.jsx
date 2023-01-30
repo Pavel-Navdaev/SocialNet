@@ -1,12 +1,17 @@
 import React from "react";
 import c from "./ProfileHeader.module.css";
 import Preloader from "../../common/Preloader/Preloader";
-import userDefaultPhoto from "../../../icons/userDefault.png";
+import defaultAvatar from "../../../icons/defaultAvatar.png";
 
 const ProfileHeader = (props) => {
   if (!props.profile) {
     return <Preloader />;
   }
+  const onMainPhotoSelect = (e) => {
+    if (e.target.files.length) {
+      props.savePhoto(e.target.files[0]);
+    }
+  };
   return (
     <div className={c.profileHeader}>
       <div className={c.profileHeaderPhotos}>
@@ -21,17 +26,27 @@ const ProfileHeader = (props) => {
           src={
             props.profile.photos.large !== null
               ? props.profile.photos.large
-              : userDefaultPhoto
+              : defaultAvatar
           }
           alt=""
           className={c.profilePhoto}
         />
+        {props.isOwner && (
+          <label className={c.mainPhotoLabel} htmlFor={"mainPhotoDownload"}>
+            <input
+              className={c.mainPhotoDownloadButton}
+              id={"mainPhotoDownload"}
+              type={"file"}
+              onChange={onMainPhotoSelect}
+            />
+          </label>
+        )}
         <div className={c.profileName}>{props.profile.fullName}</div>
       </div>
       <div className={c.profileShortInfo}>
         <div className={c.socialIcons}>
           <a
-            href={"https://www." + props.profile.contacts.facebook}
+            href={props.profile?.contacts?.facebook}
             target="_blank"
             rel="noreferrer"
           >
@@ -51,7 +66,7 @@ const ProfileHeader = (props) => {
             />
           </a>
           <a
-            href={"https://" + props.profile.contacts.instagram}
+            href={props.profile.contacts.instagram}
             target="_blank"
             rel="noopener noreferrer"
           >

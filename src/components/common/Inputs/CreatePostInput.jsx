@@ -1,6 +1,6 @@
 import React from "react";
 import { useField } from "formik";
-// import "./inputsCSS.css";
+import defaultAvatar from "../../../icons/defaultAvatar.png";
 import c from "../../ProfilePage/MyPosts/CreatePost/CreatePost.module.css";
 
 const CreatePostInput = ({ label, ...props }) => {
@@ -11,10 +11,7 @@ const CreatePostInput = ({ label, ...props }) => {
   }
   return (
     <div className={c.textBlock}>
-      <img
-        src="https://globalhrsummit.com/wp-content/uploads/2018/11/Nick-Vujicic.jpg"
-        alt=""
-      />
+      <img src={defaultAvatar} alt="" />
       <input {...props} {...field} />
     </div>
   );
